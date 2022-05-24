@@ -1,0 +1,26 @@
+.header {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a {
+      color: white;
+      text-decoration: none;
+      margin-right: 1.5rem;
+    }
+  }
+
+  p {
+    font-size: 1.3rem;
+  }
+}
