@@ -9,7 +9,7 @@
     font-size: 2rem;
   }
 
-  .links {
+  .header__links {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,7 +20,25 @@
     }
   }
 
-  p {
-    font-size: 1.3rem;
+  .header__cart {
+    position: relative;
+    a {
+      font-size: 1.3rem;
+      color: white;
+      text-decoration: none;
+    }
+
+    .header__count {
+      position: absolute;
+      top: -0.8rem;
+      right: -1rem;
+      background-color: red;
+      border-radius: 50%;
+      width: 1.4rem;
+      height: 1.4rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 }

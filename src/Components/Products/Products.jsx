@@ -2,10 +2,6 @@ import React from 'react';
 import Product from './Product';
 
 function Products(props) {
-  // console.log(props.products[0].image.url);
-
-  // return <div></div>;
-
   return (
     <div className="products">
       {props.products.map((product) => {
@@ -16,6 +12,8 @@ function Products(props) {
             desc={product.description}
             price={product.price.formatted_with_symbol}
             img={product.image.url}
+            onAddToCart={props.onAddToCart}
+            id={product.id}
           />
         );
       })}

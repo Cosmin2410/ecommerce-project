@@ -7,7 +7,7 @@ function Product(props) {
       <h2>{props.name}</h2>
       <p dangerouslySetInnerHTML={{ __html: props.desc }} />
       <p> {props.price} </p>
-      <p>Cart</p>
+      <button onClick={() => props.onAddToCart(props.id, 1)}>Cart</button>
     </div>
   );
 }
