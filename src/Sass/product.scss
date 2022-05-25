@@ -1,0 +1,22 @@
+.products {
+  color: $green;
+  display: grid;
+  grid-template-columns: 15rem 15rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+  text-align: center;
+  gap: 1rem;
+
+  img {
+    width: 10rem;
+    height: 10rem;
+    object-fit: cover;
+  }
+}
+
+.product {
+  background-color: aliceblue;
+  padding: 1rem;
+  border-radius: 5px;
+}

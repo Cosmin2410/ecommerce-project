@@ -1,3 +1,4 @@
+@import './Sass/util.scss';
 * {
   box-sizing: border-box;
   margin: 0;
@@ -5,6 +6,8 @@
 }
 
 body {
-  background-color: #333;
+  background-color: $green;
 }
 @import './Sass/header.scss';
+
+@import './Sass/product.scss';
