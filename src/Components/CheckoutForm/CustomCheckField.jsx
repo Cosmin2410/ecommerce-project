@@ -6,12 +6,19 @@ function FormInput({ name, label, required }) {
   const { control } = useFormContext();
 
   return (
-    <Grid item xs={12} sm={6} className="input">
+    <Grid item xs={12} sm={6}>
       <Controller
+        defaultValue=""
         control={control}
         name={name}
         render={({ field }) => (
-          <TextField fullWidth label={label} required={required} />
+          <TextField
+            {...field}
+            name={name}
+            label={label}
+            required={required}
+            fullWidth
+          />
         )}
       />
     </Grid>
@@ -19,24 +26,3 @@ function FormInput({ name, label, required }) {
 }
 
 export default FormInput;
-
-// Update as of 4/26/2021: Controller now requires a render prop for react-hook-form.
-// update your controller in the CustomTextField.jsx to:
-
-// import React from "react";
-// import { TextField, Grid } from "@material-ui/core";
-// import { useFormContext, Controller } from "react-hook-form";
-// const FormInput = ({ name, label, required }) => {
-//   const { control } = useFormContext();
-//   return (
-//     <Grid item xs={12} sm={6}>
-//       <Controller
-//         control={control}
-//         name={name}
-//         render={({ field }) => (
-//           <TextField fullWidth label={label} required={required} />
-//         )}
-//       />
-//     </Grid>
-//   );
-// };

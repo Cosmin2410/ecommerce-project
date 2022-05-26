@@ -114,14 +114,16 @@ function AdressForm({ checkoutToken, next }) {
       </Typography>
       <FormProvider {...methods}>
         <form
-          onSubmit={methods.handleSubmit((data) =>
+          onSubmit={methods.handleSubmit((data) => {
             next({
               ...data,
               shippingCountry,
               shippingSubdivion,
               shippingOption,
-            })
-          )}
+            });
+
+            console.log(data);
+          })}
         >
           <Grid container spacing={3}>
             <FormInput required name="firstName" label="First Name" />
@@ -177,7 +179,7 @@ function AdressForm({ checkoutToken, next }) {
             </Grid>
           </Grid>
           <br />
-          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <div>
             <Link to="/cart">
               <Button className="test-btn">Back to Cart</Button>
             </Link>

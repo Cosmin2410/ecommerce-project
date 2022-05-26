@@ -9,19 +9,25 @@ import { loadStripe } from '@stripe/stripe-js';
 
 import Review from './Review';
 
-const PaymentForm = ({ checkoutToken, backStep }) => {
+const PaymentForm = ({
+  checkoutToken,
+  backStep,
+  shippingData,
+  onCaptureCheckout,
+  nextStep,
+}) => {
   const stripePromise = loadStripe(
     'pk_test_51L3ijrHLSeONkLNPkbHpYouOVzIxVMSKUA01Zr9x0Jx7dDBhwlgq4scGuFMngVPdYuFDFeYPhO0BUoN33yk6xxja00SDIufbBU'
   );
 
-  const handleSubmit = (e, elements, stripe) => {
-    e.event.preventDefault();
+  const handleSubmit = async (e, elements, stripe) => {
+    e.preventDefault();
 
     if (!stripe || !elements) return;
 
     const cardElement = elements.getElement(CardElement);
 
-    const { error, paymentMethod } = stripe.createPaymentMethod({
+    const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: 'card',
       card: cardElement,
     });
@@ -29,22 +35,38 @@ const PaymentForm = ({ checkoutToken, backStep }) => {
     if (error) {
       console.log(error);
     } else {
+      // All user data
+
       const orderData = {
         list_items: checkoutToken.live.line_items,
         customer: {
-          firstname: shippindData.firstName,
-          lastname: shippindData.lastName,
-          email: shippindData.email,
+          firstname: shippingData.firstName,
+          lastname: shippingData.lastName,
+          email: shippingData.email,
         },
         shipping: {
           name: 'Primary',
-          street: shippindData.address1,
-          town_city: shippindData.city,
+          street: shippingData.address1,
+          town_city: shippingData.city,
           county_state: shippingData.shippingSubDivision,
           postal_zip_code: shippingData.zip,
           country: shippingData.shippingCountry,
         },
+
+        fulfillment: { shipping_method: shippingData.shippingOption },
+
+        payment: {
+          gateway: 'stripe',
+          stripe: {
+            payment_method_id: paymentMethod.id,
+          },
+        },
       };
+
+      onCaptureCheckout(checkoutToken.id, orderData);
+
+      console.log(orderData);
+      nextStep();
     }
   };
 
