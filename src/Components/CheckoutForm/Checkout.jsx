@@ -9,6 +9,7 @@ const steps = ['Shipping address', 'Payment details'];
 
 const Checkout = ({ cart }) => {
   const [activeStep, setActiveStep] = useState(0);
+  const [shippingData, setShippingData] = useState({});
   const [checkoutToken, setCheckoutToken] = useState(null);
 
   useEffect(() => {
@@ -17,18 +18,28 @@ const Checkout = ({ cart }) => {
         const token = await commerce.checkout.generateToken(cart.id, {
           type: 'cart',
         });
-        console.log(token);
         setCheckoutToken(token);
       } catch (error) {}
     };
     generateToken();
   }, [cart]);
 
+  // Next form and back form functions
+
+  const nextStep = () => setActiveStep((prevActiveStep) => prevActiveStep + 1);
+  const backStep = () => setActiveStep((prevActiveStep) => prevActiveStep - 1);
+
+  // Receive form data from AddressForm
+  const next = (data) => {
+    setShippingData(data);
+    nextStep();
+  };
+  //
   const Form = () =>
     activeStep === 0 ? (
-      <AdressForm checkoutToken={checkoutToken} />
+      <AdressForm checkoutToken={checkoutToken} next={next} />
     ) : (
-      <PaymentForm />
+      <PaymentForm checkoutToken={checkoutToken} backStep={backStep} />
     );
 
   return (
