@@ -129,3 +129,6 @@ function App() {
 export default App;
 
 // npm i @auth0/auth0-react
+
+// dev-g6w67-up.us.auth0.com
+// 0kASlQJyOrhLgsSlCzy8DZ6IlJ9FHtIf
