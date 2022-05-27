@@ -1,7 +1,24 @@
-.header {
-  color: white;
+.header__util {
   display: flex;
   justify-content: space-between;
+  padding: 1rem 5rem;
+  align-items: center;
+  border-bottom: 2px solid $green;
+
+  .header__loginCart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
+.header__nav {
+  display: flex;
+  justify-content: center;
   align-items: center;
   padding: 1rem 2rem;
 
@@ -14,41 +31,73 @@
     justify-content: center;
     align-items: center;
     a {
-      color: white;
+      color: $green;
       text-decoration: none;
       margin-right: 1.5rem;
     }
   }
+}
 
-  .header__cart {
-    position: relative;
-    a {
-      font-size: 1.3rem;
-      color: white;
-      text-decoration: none;
-    }
+.header__cart {
+  position: relative;
+  a {
+    font-size: 1.8rem;
+    color: white;
+    text-decoration: none;
+  }
 
-    .header__count {
-      position: absolute;
-      top: -0.8rem;
-      right: -1rem;
-      background-color: red;
-      border-radius: 50%;
-      width: 1.4rem;
-      height: 1.4rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+  .header__count {
+    position: absolute;
+    top: -0.8rem;
+    right: -1rem;
+    background-color: red;
+    border-radius: 50%;
+    width: 1.4rem;
+    height: 1.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
-.input {
-  input:-webkit-autofill,
-  input:-webkit-autofill:hover,
-  input:-webkit-autofill:focus,
-  input:-webkit-autofill:active {
-    -webkit-transition: 'color 9999s ease-out, background-color 9999s ease-out';
-    -webkit-transition-delay: 9999s;
+.link {
+  color: $green;
+  font-size: 1.2rem;
+}
+
+.header__loginContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-right: 1.5rem;
+  position: relative;
+  text-decoration: none;
+  color: black;
+
+  .header__count {
+    position: absolute;
+    top: -0.8rem;
+    right: -0.3rem;
+    background-color: red;
+    border-radius: 50%;
+    width: 1.4rem;
+    height: 1.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
+}
+
+.header__loginContainer::before {
+  content: '';
+  background-color: $green;
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  top: -0.5rem;
 }

@@ -13,7 +13,3 @@ function Product(props) {
 }
 
 export default Product;
-
-// npm install @chec/commerce.js
-// npm install @stripe/react-stripe-js @stripe/stripe-js react-router-dom
-// react-hook-form

@@ -8,8 +8,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <Auth0Provider
-    domain="dev-g6w67-up.us.auth0.com"
-    clientId="0kASlQJyOrhLgsSlCzy8DZ6IlJ9FHtIf"
+    domain="commerce-js.us.auth0.com"
+    clientId="WI52DXM3NT95lwAbJ2IO4EnsmLKbEg2g"
     redirectUri={window.location.origin}
   >
     <App />
