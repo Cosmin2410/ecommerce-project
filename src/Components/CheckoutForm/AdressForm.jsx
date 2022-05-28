@@ -7,6 +7,7 @@ import {
   Button,
   Grid,
   Typography,
+  CircularProgress,
 } from '@mui/material';
 import FormInput from '../CheckoutForm/CustomCheckField';
 import { commerce } from '../../lib/commerce';
@@ -121,8 +122,6 @@ function AdressForm({ checkoutToken, next }) {
               shippingSubdivion,
               shippingOption,
             });
-
-            console.log(data);
           })}
         >
           <Grid container spacing={3}>
@@ -131,7 +130,7 @@ function AdressForm({ checkoutToken, next }) {
             <FormInput required name="address1" label="Address" />
             <FormInput required name="email" label="Email" />
             <FormInput required name="city" label="City" />
-            <FormInput required name="zip" label="ZIP-Code" />
+            <FormInput required name="zip" label="ZIP Code" />
 
             <Grid item xs={12} sm={6}>
               <InputLabel>Shipping Country</InputLabel>
@@ -178,6 +177,7 @@ function AdressForm({ checkoutToken, next }) {
               </Select>
             </Grid>
           </Grid>
+
           <br />
           <div>
             <Link to="/cart">
