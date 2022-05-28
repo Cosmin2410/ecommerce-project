@@ -4,6 +4,7 @@
   height: 50rem;
   gap: 1rem;
   justify-content: center;
+  margin-top: 5rem;
 
   .grid:nth-child(3) {
     grid-row: span 2;
@@ -79,5 +80,11 @@
     .grid-3 {
       background-position: left left;
     }
+  }
+}
+
+@media (max-width: 35em) {
+  .grid__container {
+    grid-template-columns: 20rem;
   }
 }

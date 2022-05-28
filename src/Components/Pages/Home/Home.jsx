@@ -2,8 +2,10 @@ import React from 'react';
 import SwiperPage from './Swiper';
 import { FaHeadset, FaRocket, FaGift, FaLock } from 'react-icons/fa';
 import Grid from './Grid';
+import CustomerService from './CustomerService';
+import Products from '../../Products/Products';
 
-const Home = () => {
+const Home = ({ products, onAddToCart }) => {
   return (
     <div>
       <SwiperPage />
@@ -28,7 +30,11 @@ const Home = () => {
         </div>
       </div>
 
+      <Products products={products} onAddToCart={onAddToCart} />
+
       <Grid />
+
+      <CustomerService />
     </div>
   );
 };

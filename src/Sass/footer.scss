@@ -1,0 +1,117 @@
+footer {
+  background-color: $green;
+  color: white;
+  padding: 1rem 5rem;
+
+  p {
+    opacity: 0.8;
+  }
+}
+
+.footer__newsletter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7rem 0;
+  border-bottom: 4px solid white;
+
+  .footer__newsText {
+    max-width: 20rem;
+    font-size: 1.6rem;
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      font-family: 'Times New Roman', Times, serif;
+    }
+  }
+
+  .footer__newsBtn {
+    margin-left: 2rem;
+    button {
+      border: none;
+      width: 15rem;
+      height: 4.3rem;
+      border-radius: 5rem;
+      font-size: 1.3rem;
+      background-color: #efb3c0;
+      color: black;
+      transition: background-color 400ms ease, color 400ms ease;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: brown;
+      color: white;
+    }
+  }
+}
+
+.footer__links {
+  display: grid;
+  grid-template-columns: repeat(4, 15rem);
+  justify-content: center;
+  margin: 3rem 0;
+  text-align: center;
+
+  .footer__social {
+    h2 {
+      margin-bottom: 2rem;
+    }
+
+    svg {
+      font-size: 2rem;
+      margin-right: 1rem;
+      cursor: pointer;
+    }
+  }
+
+  .footer__nav {
+    h2 {
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 0.6rem;
+      cursor: pointer;
+    }
+
+    p:hover {
+      color: #efb3c0;
+    }
+  }
+}
+
+@media (max-width: 47.5em) {
+  .footer__newsletter {
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    .footer__newsText {
+      margin-bottom: 3rem;
+    }
+  }
+}
+
+@media (max-width: 68.75em) {
+  .footer__links {
+    grid-template-columns: repeat(2, 15rem);
+  }
+
+  .footer__company,
+  .footer__customer {
+    margin-top: 3rem;
+  }
+}
+
+@media (max-width: 32.5em) {
+  .footer__links {
+    grid-template-columns: 15rem;
+  }
+
+  .footer__products {
+    margin-top: 3rem;
+  }
+}

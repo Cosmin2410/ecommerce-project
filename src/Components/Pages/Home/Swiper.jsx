@@ -32,10 +32,10 @@ const SwiperPage = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="swiper">
+          <div className="swiper swiper-2">
             <div className="swiper__text">
-              <h3>Deal of the Day</h3>
-              <h1>Great Deals. Every Day</h1>
+              <h3>from 250$</h3>
+              <h1>Your Sleek Fitnes & Wellness Essential</h1>
               <p>EXPLORE / SHOP NOW</p>
             </div>
           </div>

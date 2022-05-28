@@ -1,13 +1,17 @@
 import React from 'react';
+import { FaCartPlus } from 'react-icons/fa';
 
 function Product(props) {
   return (
     <div className="product">
-      <img src={props.img} />
+      <img src={props.img} alt="prduct img" />
       <h2>{props.name}</h2>
-      <p dangerouslySetInnerHTML={{ __html: props.desc }} />
-      <p> {props.price} </p>
-      <button onClick={() => props.onAddToCart(props.id, 1)}>Cart</button>
+      <p className="desc" dangerouslySetInnerHTML={{ __html: props.desc }} />
+      <h3 className="price">{props.price}</h3>
+      <p className="cart" onClick={() => props.onAddToCart(props.id, 1)}>
+        Add To Cart
+        <FaCartPlus />
+      </p>
     </div>
   );
 }

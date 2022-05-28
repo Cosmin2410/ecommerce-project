@@ -1,0 +1,23 @@
+.customer__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  .customer__row {
+    width: 20rem;
+    margin-right: 5rem;
+    margin-top: 3rem;
+    h2 {
+      font-size: 1.3rem;
+    }
+
+    p {
+      margin: 1rem 0;
+    }
+
+    svg {
+      font-size: 2rem;
+    }
+  }
+}

@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './Components/Header';
 import Checkout from './Components/CheckoutForm/Checkout';
 import Home from './Components/Pages/Home/Home';
+import Footer from './Components/Footer';
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -91,13 +92,10 @@ function App() {
   return (
     <Router>
       <Header cartNum={cart} />
-      <Home />
       <Routes>
         <Route
           path="/"
-          element={
-            <Products products={products} onAddToCart={handleAddToCart} />
-          }
+          element={<Home products={products} onAddToCart={handleAddToCart} />}
         />
 
         <Route
@@ -123,13 +121,10 @@ function App() {
           }
         />
       </Routes>
+
+      <Footer />
     </Router>
   );
 }
 
 export default App;
-
-// npm i @auth0/auth0-react
-
-// dev-g6w67-up.us.auth0.com
-// 0kASlQJyOrhLgsSlCzy8DZ6IlJ9FHtIf
