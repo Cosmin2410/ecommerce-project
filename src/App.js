@@ -5,6 +5,7 @@ import Cart from './Components/Cart/Cart';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './Components/Header';
 import Checkout from './Components/CheckoutForm/Checkout';
+import Home from './Components/Pages/Home/Home';
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -90,7 +91,7 @@ function App() {
   return (
     <Router>
       <Header cartNum={cart} />
-
+      <Home />
       <Routes>
         <Route
           path="/"

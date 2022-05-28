@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Login from './Auth0/Login';
-import { FaShoppingCart } from 'react-icons/fa';
+import { FaShoppingCart, FaArrowRight } from 'react-icons/fa';
 
 function Header(props) {
   const location = useLocation();
@@ -49,6 +49,13 @@ function Header(props) {
           </Link>
         </div>
       </nav>
+
+      <div className="header__subscribe">
+        <p>
+          Get 15% Off Your First Full-Price Purchase When You Subscribe To Our
+          Emails / Subscribe Now <FaArrowRight />
+        </p>
+      </div>
     </header>
   );
 }
