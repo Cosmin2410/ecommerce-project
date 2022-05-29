@@ -90,40 +90,41 @@ function App() {
   }, []);
 
   return (
-    <Router>
-      <Header cartNum={cart} />
-      <Routes>
-        <Route
-          path="/"
-          element={<Home products={products} onAddToCart={handleAddToCart} />}
-        />
+    <Home products={products} onAddToCart={handleAddToCart} />
+    // <Router>
+    //   <Header cartNum={cart} />
+    //   <Routes>
+    //     <Route
+    //       path="/"
+    //       element={<Home products={products} onAddToCart={handleAddToCart} />}
+    //     />
 
-        <Route
-          path="/cart"
-          element={
-            <Cart
-              cart={cart}
-              handleUpdateCartQty={handleUpdateCartQty}
-              handleRemoveFromCart={handleRemoveFromCart}
-              handleEmptyCart={handleEmptyCart}
-            />
-          }
-        />
-        <Route
-          path="/checkout"
-          element={
-            <Checkout
-              cart={cart}
-              order={order}
-              onCaptureCheckout={handleCaptureCheckout}
-              error={errorMessage}
-            />
-          }
-        />
-      </Routes>
+    //     <Route
+    //       path="/cart"
+    //       element={
+    //         <Cart
+    //           cart={cart}
+    //           handleUpdateCartQty={handleUpdateCartQty}
+    //           handleRemoveFromCart={handleRemoveFromCart}
+    //           handleEmptyCart={handleEmptyCart}
+    //         />
+    //       }
+    //     />
+    //     <Route
+    //       path="/checkout"
+    //       element={
+    //         <Checkout
+    //           cart={cart}
+    //           order={order}
+    //           onCaptureCheckout={handleCaptureCheckout}
+    //           error={errorMessage}
+    //         />
+    //       }
+    //     />
+    //   </Routes>
 
-      <Footer />
-    </Router>
+    //   <Footer />
+    // </Router>
   );
 }
 
