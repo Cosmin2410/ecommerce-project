@@ -3,7 +3,7 @@ import { Typography, List, ListItem, ListItemText } from '@mui/material';
 
 function Review({ checkoutToken }) {
   return (
-    <div>
+    <div className="order__summary">
       <h3>Order Summary</h3>
       <List disablePadding>
         {checkoutToken.live.line_items.map((product) => (

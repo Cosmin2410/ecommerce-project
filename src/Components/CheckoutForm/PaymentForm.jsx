@@ -71,7 +71,7 @@ const PaymentForm = ({
   };
 
   return (
-    <div>
+    <div className="payment">
       <Review checkoutToken={checkoutToken} />
 
       <h2>Payment method</h2>
@@ -80,12 +80,12 @@ const PaymentForm = ({
         <ElementsConsumer>
           {({ elements, stripe }) => (
             <form onSubmit={(e) => handleSubmit(e, elements, stripe)}>
-              <CardElement />
-              <br />
-              <br />
-              <div>
-                <button onClick={backStep}>Back</button>
-                <button type="submit" disabled={!stripe}>
+              <CardElement className="card" />
+              <div className="btns-back-pay">
+                <button className="btn-back-pay" onClick={backStep}>
+                  Back
+                </button>
+                <button className="btn-pay" type="submit" disabled={!stripe}>
                   Pay {checkoutToken.live.subtotal.formatted_with_symbol}
                 </button>
               </div>

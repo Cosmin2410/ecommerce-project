@@ -170,3 +170,50 @@
     }
   }
 }
+
+// Payment form
+
+.order__summary {
+  h3 {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1.6rem;
+    color: $green;
+  }
+}
+
+.payment {
+  h2 {
+    text-align: center;
+    color: $green;
+    margin: 1.5rem 0;
+  }
+
+  .btns-back-pay {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 3rem;
+
+    button {
+      @extend %btn;
+    }
+  }
+}
+
+// Confirmation
+
+.confirmation {
+  height: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: $green;
+  p {
+    margin: 2rem 0;
+  }
+
+  button {
+    @extend %btn;
+  }
+}

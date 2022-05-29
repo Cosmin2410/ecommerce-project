@@ -10,7 +10,7 @@ $green: rgb(0, 64, 37);
   cursor: pointer;
   transition: box-shadow 200ms ease;
 
-  %btn:hover {
+  &:hover {
     box-shadow: 0 0 10px black;
   }
 }
