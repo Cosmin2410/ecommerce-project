@@ -128,3 +128,7 @@ function App() {
 }
 
 export default App;
+
+// "homepage": "https://Cosmin2410.github.io/ecommerce-project",
+// "predeploy": "npm run build",
+// "deploy": "gh-pages -d build",
