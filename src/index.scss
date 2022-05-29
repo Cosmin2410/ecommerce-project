@@ -5,6 +5,10 @@
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 body {
   // background-color: #333;
   font-family: Arial, Helvetica, sans-serif;
@@ -18,24 +22,6 @@ body {
 //
 //
 
-.add-remove {
-  display: flex;
-  gap: 1rem;
-  color: white;
-  background-color: black;
-  width: fit-content;
-  padding: 0.5rem;
-  border-radius: 5px;
-}
-
-.item {
-  img {
-    width: 10rem;
-    height: 10rem;
-    object-fit: cover;
-  }
-}
-
 @import './Sass/header.scss';
 
 @import './Sass/product.scss';
@@ -47,3 +33,5 @@ body {
 @import './Sass/Home/customerService.scss';
 
 @import './Sass/footer.scss';
+
+@import './Sass/cart.scss';

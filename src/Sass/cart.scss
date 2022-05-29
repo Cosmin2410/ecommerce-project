@@ -1,0 +1,172 @@
+// Cart Filled
+
+.cart__items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5rem 0;
+  gap: 1rem;
+
+  .quantity {
+    margin-left: 1.5rem;
+    font-size: 1.4rem;
+  }
+
+  .add-remove {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      border: none;
+      background-color: $green;
+      font-size: 1.4rem;
+      cursor: pointer;
+      width: 1.4rem;
+      height: 1.4rem;
+    }
+  }
+
+  .removeAll {
+    border: none;
+    background-color: $green;
+    width: 7rem;
+    height: 2rem;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    transition: box-shadow 200ms ease;
+  }
+
+  .removeAll:hover {
+    box-shadow: 0 0 8px black;
+  }
+}
+
+.item {
+  color: $green;
+
+  h1 {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  img {
+    width: 10rem;
+    height: 10rem;
+    object-fit: cover;
+  }
+}
+
+.price__btns {
+  text-align: center;
+  border-top: 3px solid $green;
+  margin-bottom: 3rem;
+
+  .total {
+    font-size: 1.3rem;
+    margin-top: 2rem;
+    margin-bottom: 1.3rem;
+  }
+  .remove__checkout {
+    .btn {
+      border: none;
+      background-color: $green;
+      color: white;
+      width: 8rem;
+      height: 2rem;
+      border-radius: 20px;
+      transition: box-shadow 200ms ease;
+      cursor: pointer;
+      margin-right: 1rem;
+    }
+
+    .btn:hover {
+      box-shadow: 0 0 8px black;
+    }
+  }
+}
+
+@media (max-width: 33.75em) {
+  .cart__items {
+    flex-direction: column;
+    text-align: center;
+
+    .quantity {
+      margin-left: 0;
+    }
+    .add-remove {
+      flex-direction: row;
+    }
+  }
+}
+
+// Cart empty
+
+.emptyCart {
+  height: 30rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  h1 {
+    color: $green;
+    font-size: 2rem;
+  }
+
+  button {
+    border: none;
+    background-color: $green;
+    color: white;
+    width: 8rem;
+    height: 2rem;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 2rem;
+    transition: box-shadow 200ms ease;
+
+    button:hover {
+      box-shadow: 0 0 10px black;
+    }
+  }
+}
+
+// Form
+
+.stepper {
+  max-width: 35rem;
+  margin: 0 auto;
+  margin-top: 5rem;
+}
+
+.form {
+  max-width: 35rem;
+
+  h1 {
+    text-align: center;
+    color: $green;
+    margin: 2rem 0;
+  }
+
+  .back-next-btns {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem;
+
+    button {
+      @extend %btn;
+      width: 12rem;
+    }
+
+    .back-btn {
+      text-decoration: none;
+    }
+  }
+}

@@ -1,1 +1,16 @@
 $green: rgb(0, 64, 37);
+
+%btn {
+  border: none;
+  background-color: $green;
+  color: white;
+  width: 8rem;
+  height: 2rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: box-shadow 200ms ease;
+
+  %btn:hover {
+    box-shadow: 0 0 10px black;
+  }
+}

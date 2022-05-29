@@ -6,11 +6,11 @@ import {
   MenuItem,
   Button,
   Grid,
-  Typography,
   CircularProgress,
 } from '@mui/material';
 import FormInput from '../CheckoutForm/CustomCheckField';
 import { commerce } from '../../lib/commerce';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 import { Link } from 'react-router-dom';
 
@@ -109,10 +109,8 @@ function AdressForm({ checkoutToken, next }) {
   }, [shippingSubdivion]);
 
   return (
-    <>
-      <Typography variant="h6" gutterBottom>
-        Shipping
-      </Typography>
+    <div className="form">
+      <h1>Shipping</h1>
       <FormProvider {...methods}>
         <form
           onSubmit={methods.handleSubmit((data) => {
@@ -179,16 +177,20 @@ function AdressForm({ checkoutToken, next }) {
           </Grid>
 
           <br />
-          <div>
+          <div className="back-next-btns">
             <Link to="/cart">
-              <Button className="test-btn">Back to Cart</Button>
+              <Button className="back-btn">
+                <FaArrowLeft /> Back to Cart
+              </Button>
             </Link>
 
-            <Button type="submit">Next</Button>
+            <Button type="submit">
+              Next <FaArrowRight />
+            </Button>
           </div>
         </form>
       </FormProvider>
-    </>
+    </div>
   );
 }
 

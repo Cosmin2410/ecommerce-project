@@ -50,7 +50,7 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
     );
 
   return (
-    <div>
+    <div className="stepper">
       <main>
         <Stepper activeStep={activeStep}>
           {steps.map((step) => (
